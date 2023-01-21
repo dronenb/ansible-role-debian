@@ -1,0 +1,25 @@
+---
+# tasks file for debian
+- name: Update apt cache
+  become: true
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: Aptitude safe upgrade
+  ansible.builtin.apt:
+    update_cache: false
+    upgrade: safe
+
+- name: Apt autoremove
+  ansible.builtin.apt:
+    update_cache: false
+    autoremove: true
+
+- name: Include Bash role
+  ansible.builtin.include_role:
+    name: dronenb.bash
+
+# This must come after the apt cache update
+- name: Include Vim role
+  ansible.builtin.include_role:
+    name: dronenb.vim
