@@ -15,13 +15,3 @@ galaxy_info:
         - all
   galaxy_tags:
     - debian
-
-dependencies:
-  - name: dronenb.bash
-    src: git@github.com:dronenb/ansible-role-bash.git
-    scm: git
-    version: main
-  - name: dronenb.vim
-    src: git@github.com:dronenb/ansible-role-vim.git
-    scm: git
-    version: main
