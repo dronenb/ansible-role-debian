@@ -6,11 +6,13 @@
     update_cache: true
 
 - name: Aptitude safe upgrade
+  become: true
   ansible.builtin.apt:
     update_cache: false
     upgrade: safe
 
 - name: Apt autoremove
+  become: true
   ansible.builtin.apt:
     update_cache: false
     autoremove: true
