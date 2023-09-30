@@ -1,4 +1,4 @@
 ---
-dependencies:
+roles:
   - src: dronenb.bash
   - src: dronenb.vim
