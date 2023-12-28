@@ -17,6 +17,14 @@
     update_cache: false
     autoremove: true
 
+- name: Install packages
+  when: apt_packages is defined
+  become: true
+  ansible.builtin.apt:
+    state: present
+    pkg: "{{ apt_packages }}"
+    update_cache: false
+
 - name: Include Bash role
   ansible.builtin.include_role:
     name: dronenb.bash
